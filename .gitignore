@@ -54,7 +54,7 @@ print_i
 push_swap
 phonebook
 random_ab
-minishell
+minishell/minishell
 *.replace
 empty_test
 mutex_lock
