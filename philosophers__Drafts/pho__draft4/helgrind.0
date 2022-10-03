@@ -1,0 +1,26 @@
+valgrind --tool=helgrind ./philo 1 200 200 200
+dies at 200 ms
+
+valgrind --tool=helgrind ./philo 2 800 200 200
+no one dies
+
+valgrind --tool=helgrind ./philo 5 800 200 200
+no one will die
+
+valgrind --tool=helgrind ./philo 5 800 200 200 7
+death when everyone has finished the 7th meal
+
+valgrind --tool=helgrind ./philo 4 410 200 200
+no one dies
+
+valgrind --tool=helgrind ./philo 4 310 200 200
+someones dies anytime
+
+valgrind --tool=helgrind ./philo 4 500 200 2147483647
+someone dies at 500 ms
+
+valgrind --tool=helgrind ./philo 4 2147483647 200 200
+no one dies
+
+valgrind --tool=helgrind ./philo 4 200 210 200
+someone dies in 210 ms

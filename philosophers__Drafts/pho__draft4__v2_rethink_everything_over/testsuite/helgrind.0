@@ -1,0 +1,46 @@
+valgrind --tool=helgrind ./philo 1 800 200 200
+no eating, die at once
+
+valgrind --tool=helgrind ./philo 4 410 200 200
+no one dies
+
+valgrind --tool=helgrind ./philo 2 800 200 200
+no one dies
+
+(+)
+valgrind --tool=helgrind ./philo 5 600 150 150 
+someone should die
+
+valgrind --tool=helgrind ./philo 5 800 200 200
+no one dies
+
+valgrind --tool=helgrind ./philo 4 2147483647 200 200
+no one dies
+
+valgrind --tool=helgrind ./philo 4 500 200 2147483647
+someone dies at 500 ms
+
+valgrind --tool=helgrind ./philo 5 800 200 200 7
+game goes on until meals=7
+
+valgrind --tool=helgrind ./philo 4 200 210 200
+someone dies before 210 ms
+
+valgrind --tool=helgrind ./philo 4 310 200 100
+someone dies
+
+(cont.)
+
+valgrind --tool=helgrind ./philo 1 310 200 100
+valgrind --tool=helgrind ./philo 21 410 200 200
+valgrind --tool=helgrind ./philo 22 410 200 200
+valgrind --tool=helgrind ./philo 23 410 200 200
+valgrind --tool=helgrind ./philo 26 410 200 200
+valgrind --tool=helgrind ./philo 3 410 200 200
+valgrind --tool=helgrind ./philo 6 410 200 200
+valgrind --tool=helgrind ./philo 9 410 200 200 
+valgrind --tool=helgrind ./philo 2 410 200 200
+valgrind --tool=helgrind ./philo 4 310 200 100
+valgrind --tool=helgrind ./philo 4 410 200 200
+
+(end)

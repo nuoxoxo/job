@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                                            */
+/*                                                                            */
+/*                             ~  ~  ~  ~  ~    ~                             */
+/*                              ~    _ ~ _   o>                               */
+/*                             ~  \ / \ / \ /  ~                              */
+/*                              ~  ~      ~    ~                              */
+/*                                                                            */
+/*                                                                            */
+/*                                                                            */
+/* *********************  ʕ • ᴥ•ʔ  mode: todo  (⊙. ⊙ )  ********************* */
+
+the main loop looks like this:
+-
+
+t_token		*tokenlist;
+t_atom		*atomlist;
+t_env		*envlist;
+char		*line;
+
+while (True)
+{
+	
+	line = readline(PROMPT2);
+	if (line)
+	{
+		if (atomlist_get(line, & atomlist, envlist))
+			print_atomlist(atomlist);
+
+		if (tokenlist_get(& tokenlist, atomlist, envlist))
+			print_tokenlist(tokenlist);
+	}
+}

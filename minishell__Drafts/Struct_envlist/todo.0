@@ -1,0 +1,15 @@
+
+-	the envmap
+	- is a dll . doubly linked list
+	- is a dict of key-value pairs
+	- keys & values are of type (void *) or (char *)
+
+-	funcs:
+	-	init envlist
+	-	append to enlist
+	-	w. strndup . strdup
+	-	func to change env val
+
+TODO
+
+	-	to mod. envp_to_envlist func -> takes only ONE param

@@ -1,0 +1,29 @@
+/bin/ls
+cd "|" /bin/echo OK
+cd - "|" /bin/echo OK ";"
+/bin/cat monoshell.c
+/bin/ls monoshell.c
+/bin/ls Helloworld
+";"
+";" ";"
+";" ";" /bin/echo OK
+";" ";" /bin/echo OK ";"
+";" ";" /bin/echo OK ";" ";"
+";" ";" /bin/echo OK ";" ";" ";" /bin/echo OK
+/bin/ls "|" /usr/bin/grep monoshell
+/bin/ls "|" /usr/bin/grep monoshell "|" /usr/bin/grep mono
+/bin/ls  in stdin in  "|" /usr/bin/grep mono "|" /bin/cat -n ";" /bin/echo dernier ";" /bin/echo
+/bin/ls "|" /usr/bin/grep mono "|" /bin/cat -n ";" /bin/echo dernier ";" /bin/echo outfile ";"
+/bin/echo outfile ";" /bin/echo 1.in ";" /bin/echo todotodotodo ";" /bin/echo in.1 ";" /bin/echo todo.1wstdinestdinrtregoutstdouti ";"
+/bin/ls outfile ";" /bin/ls ";" /bin/ls todotodo ";" /bin/ls monoshell.c ";" /bin/ls infile ";"
+/bin/ls "|" /usr/bin/grep mono ";" /bin/ls "|" /usr/bin/grep mono ";" /bin/ls "|" /usr/bin/grep mono ";" /bin/ls "|" /usr/bin/grep mono ";"
+/bin/cat infile "|" /usr/bin/grep a "|" /usr/bin/grep b ";" /bin/cat infile ";"
+/bin/cat infile "|" /usr/bin/grep a "|" /usr/bin/grep w ";" /bin/cat infile ";"
+/bin/cat infile "|" /usr/bin/grep a "|" /usr/bin/grep w ";" /bin/cat infile
+/bin/cat infile ";" /bin/cat infile "|" /usr/bin/grep a "|" /usr/bin/grep b "|" /usr/bin/grep z ";" /bin/cat infile
+";" /bin/cat infile ";" /bin/cat infile "|" /usr/bin/grep a "|" /usr/bin/grep b "|" /usr/bin/grep z ";" /bin/cat infile
+echo '$USER | cat ls blablabla'
+echo "$USER | 'ici c'est Paris;"
+echo $USER hello there | ls | cat > _log
+cat _cmd.0 > > _log
+cat _cmd.0 > > _log | cat log | wc -l

@@ -1,0 +1,59 @@
+
+[ check if all quotes are closed/valid ]
+(invalid eg.) """"""""''"""''"""''"'"'''"'"''''''""""''"""''"""''"'"'''"'"'''"""''"""''"'"'''"'"'''''""""""""""""""""""""""""""""'"""''"'"''"""''""''"""''""''"""''""''"""''""
+(valid eg.) """"""""''"""''"""''"'"'''"'"''''''""""''"""''"""''"'"'''"'"'''"""''"""''"'"'''"'"'''''""""""""""""""""""""""""""""'"""''"'"''"""''""''"""''""''"""''""''"""''"""
+
+cd "|" /bin/echo OK
+cd - "|" /bin/echo OK ";"
+/bin/cat monoshell.c
+/bin/ls monoshell.c
+/bin/ls Helloworld
+/bin/ls
+
+";" ";" /bin/echo OK ";" ";" ";" /bin/echo OK
+";" ";" /bin/echo OK
+";"
+";" ";"
+";" ";" /bin/echo OK ";"
+";" ";" /bin/echo OK ";" ";"
+
+-
+
+/bin/ls "|" /usr/bin/grep monoshell
+/bin/ls "|" /usr/bin/grep monoshell "|" /usr/bin/grep mono
+
+/bin/ls  in stdin in  "|" /usr/bin/grep mono "|" /bin/cat -n ";" /bin/echo dernier ";" /bin/echo
+/bin/ls "|" /usr/bin/grep mono "|" /bin/cat -n ";" /bin/echo dernier ";" /bin/echo outfile ";"
+/bin/echo outfile ";" /bin/echo 1.in ";" /bin/echo todo1todo2todo3 ";" /bin/echo in.1 ";" /bin/echo todo3.heartShapedBox ";"
+
+-
+
+/bin/cat infile ";" /bin/cat infile "|" /usr/bin/grep a "|" /usr/bin/grep b "|" /usr/bin/grep z ";" /bin/cat infile
+/bin/ls outfile ";" /bin/ls ";" /bin/ls todo1todo2 ";" /bin/ls monoshell.c ";" /bin/ls infile ";"
+/bin/ls "|" /usr/bin/grep mono ";" /bin/ls "|" /usr/bin/grep mono ";" /bin/ls "|" /usr/bin/grep mono ";" /bin/ls "|" /usr/bin/grep mono ";"
+
+";" /bin/cat infile ";" /bin/cat infile "|" /usr/bin/grep a "|" /usr/bin/grep b "|" /usr/bin/grep z ";" /bin/cat infile
+
+-
+
+cat _cmd.0 > > _log
+cat _cmd.0 > > _log | cat log | wc -l
+
+/bin/cat infile "|" /usr/bin/grep a "|" /usr/bin/grep b ";" /bin/cat infile ";"
+/bin/cat infile "|" /usr/bin/grep a "|" /usr/bin/grep w ";" /bin/cat infile ";"
+/bin/cat infile "|" /usr/bin/grep a "|" /usr/bin/grep w ";" /bin/cat infile
+
+-
+
+echo $SHELL && echo '$SHELL | cat ls all cats are grey' && echo "$LOGNAME | 'ici c'est Paris;" && echo $PAGER hello world | ls | cat > log && echo $LANG
+
+echo $SHELL && echo $PAGER && echo $LANG && echo '$SHELL hello world' && echo "$LOGNAME | 'ici c'est Paris;"  
+
+echo '$USER | cat ls all cats are grey'
+echo "$USER | 'ici c'est Paris;"
+echo $USER hello world | ls | cat > log
+echo '$LOGNAME'
+echo "$LOGNAME"
+
+-
+

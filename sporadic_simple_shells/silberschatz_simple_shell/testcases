@@ -1,0 +1,19 @@
+ls
+ls -l
+ls ../
+ps
+ps -l
+cat wordlist_to_sort
+pwd
+whoami
+history
+which python
+which vcom
+which grep
+which gcc
+echo $path
+echo $PATH
+echo $PWD
+history
+!9
+(end)

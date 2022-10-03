@@ -1,0 +1,53 @@
+Testsuite:
+
+./philo 1 800 200 200
+no eating, die at once
+
+./philo 4 500 200 2147483647
+someone dies at 500 ms
+
+./philo 5 800 200 200 7
+game goes on until meals=7
+
+./philo 4 200 210 200
+someone dies before 210 ms
+
+./philo 4 310 200 100
+someone dies
+
+./philo 1 800 200 200 0
+no ops
+
+./philo 4 410 200 200
+no one dies
+
+./philo 2 800 200 200
+no one dies
+
+(+)
+./philo 5 600 150 150 
+no one dies
+
+./philo 5 800 200 200
+no one dies
+
+./philo 4 2147483647 200 200
+no one dies
+
+-
+
+subject ++:
+
+./philo 1 310 200 100
+./philo 21 410 200 200
+./philo 22 410 200 200
+./philo 23 410 200 200
+./philo 26 410 200 200
+./philo 3 410 200 200
+./philo 6 410 200 200
+./philo 9 410 200 200 
+./philo 2 410 200 200
+./philo 4 310 200 100
+./philo 4 410 200 200
+
+(end)
