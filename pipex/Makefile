@@ -1,13 +1,7 @@
 name	=	pipex
-comp	=	gcc -Wall -Wextra -Werror -fsanitize=address
+comp	=	cc -Wall -Wextra -Werror -fsanitize=address
 rmv	=	rm -rf
 src	=	$(wildcard *.c)
-
-#	put all the .o file in a directory
-#	use also mkdir -p to create a directory for the .o files
-#	voila
-
-# bud	=	$(src:.c=.o)
 bud	=	$(src:%.c=obj/%.o)
 
 #%.o	:	%.c
