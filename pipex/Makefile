@@ -19,7 +19,7 @@ clean		:
 			@ $(rmv) $(bud)
 			@ $(rmv) obj/
 
-fclean		:	@ clean
+fclean		:	clean
 			@ $(rmv) $(name)
 
 all		:	$(name)
