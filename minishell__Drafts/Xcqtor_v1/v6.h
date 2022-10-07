@@ -101,6 +101,8 @@ typedef struct	s_token
 
 extern int		g_exit_status;
 
+void	handle_signal(enum e_sig_type);
+
 /*	toolkit extended	*/
 
 char		*ft_strndup_protected(const char *src, int n);
@@ -130,7 +132,7 @@ void		builtin_unset(t_atom *a, t_env *e); // New
 void		builtin_export(t_atom *node, t_env *envlist); // New
 
 void		builtin_exit(t_atom *node, int type); // New
-// void	builtin_exit(int); // new // Deprecated
+// void		builtin_exit(int); // Deprecated
 
 //  	envlist
 
@@ -144,7 +146,16 @@ void		envlist_erase(t_env **);
 void		envlist_free(t_env *);
 void		envlist_print(t_env *);
 int			envlist_has_key(t_env *node, char *key);
-int			envlist_replace(t_env *, chhandle_signalatom **slst, t_env *elst);
+int			envlist_replace(t_env *, char *, char *);
+
+//  	New: singal handler
+
+void		handle_signal(enum e_sig_type mode);
+
+//	t_atom / atomlist
+
+int			atomlist_get(char *line, t_atom **slst, t_env *elst);
+
 t_atom		*atomlist_from_line(char *line, char *charset);
 t_atom		*atomlist_new_node(char *s);
 char		*atomlist_getenv(t_env *elst, char *s1, char *s2);

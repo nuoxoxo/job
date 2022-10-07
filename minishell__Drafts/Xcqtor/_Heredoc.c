@@ -99,7 +99,7 @@ char	*heredoc_path_builder(void)
 	file_num = ft_itoa(num);
 	filename = ft_strjoin_protected("/tmp/", file_num);
 	if (!filename)
-		exit_error_alloc();
+		ft_exit_error_alloc();
 	while (! stat(filename, & info))
 	{
 		free(file_num);
@@ -107,7 +107,7 @@ char	*heredoc_path_builder(void)
 		free(filename);
 		filename = ft_strjoin_protected("/tmp/", file_num);
 		if (! filename)
-			exit_error_alloc;
+			ft_exit_error_alloc();
 	}
 	free(file_num);
 	return (filename);

@@ -46,7 +46,7 @@ t_env	*envlist_new_node(char *key, char *val)
 
 	res = (t_env *) malloc(sizeof(t_env));
 	if (!res)
-		exit_error_alloc();
+		ft_exit_error_alloc();
 
 	res->prev = null;
 	res->next = null;
@@ -235,7 +235,7 @@ char	**envlist_to_arr(t_env *node)
 	}
 	arr = malloc(sizeof(char *) * (1 + len));
 	if (!arr)
-		exit_error_alloc();
+		ft_exit_error_alloc();
 	arr[len] = null;
 	len = 0;
 	while (node)
@@ -245,4 +245,3 @@ char	**envlist_to_arr(t_env *node)
 	}
 	return (arr);
 }
-

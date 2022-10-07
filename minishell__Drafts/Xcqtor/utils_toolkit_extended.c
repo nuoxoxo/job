@@ -70,10 +70,10 @@ char	*ft_strdup_protected(const char *src)
 	char	*des;
 	int		len;
 
-	len = slen((char *) src);
+	len = ft_strlen((char *) src);
 	des = malloc(sizeof(char) * (len + 1));
 	if (!des)
-		exit_error_alloc();
+		ft_exit_error_alloc();
 	ptr = des;
 	while (*src)
 		*des++ = *src++;
@@ -88,13 +88,13 @@ char	*ft_strndup_protected(const char *src, int n)
 	int		size;
 	int		i;
 
-	size = slen((char *) src);
+	size = ft_strlen((char *) src);
 	if (size < n)
 		des = malloc(sizeof(char) * (size + 1));
 	else
 		des = malloc(sizeof(char) * (n + 1));
 	if (!des)
-		exit_error_alloc();
+		ft_exit_error_alloc();
 	i = 0;
 	ptr = des;
 	while (*src && i < n)
@@ -113,10 +113,10 @@ char	*ft_strjoin_triple(char *s1, char *s2, char *s3)
 
 	temp = ft_strjoin_protected(s1, s2);
 	if (!temp)
-		exit_error_alloc();
+		ft_exit_error_alloc();
 	r = ft_strjoin_protected(temp, s3);
 	if (!r)
-		exit_error_alloc();
+		ft_exit_error_alloc();
 	free(temp);
 	return (r);
 }
@@ -135,10 +135,10 @@ char	*ft_strjoin_protected(char const *prefix, char const *suffix)
 		return (0);
 	if (!suffix)
 		return ((char *) prefix);
-	size = slen((char *) prefix) + slen((char *) suffix) + 1;
+	size = ft_strlen((char *) prefix) + ft_strlen((char *) suffix) + 1;
 	res = (char *) malloc(sizeof(char) * size);
 	if (!res)
-		exit_error_alloc();
+		ft_exit_error_alloc();
 	_cpy(res, (char *) prefix);
 	_cat(res, (char *) suffix);
 	return (res);

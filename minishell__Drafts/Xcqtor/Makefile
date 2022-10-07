@@ -44,7 +44,7 @@ clean		:
 
 fclean		:	clean
 			@ $(rmv) $(name) out *.o */*.o *.out
-			@#@ make -C $(lib_path) fclean
+			@ make -C $(lib_path) fclean
 
 f		:	fclean
 re		:	f all

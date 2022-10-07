@@ -25,7 +25,7 @@ int	main(int c, char *v[], char *envp[])
 	{
 		line = readline(PROMPT);
 		print_input(line);
-		if (!slen(line))
+		if (!ft_strlen(line))
 			continue ;
 		add_history(line);
 
@@ -75,6 +75,7 @@ int	main(int c, char *v[], char *envp[])
 		}
 		// print("\nreached bottom of main :) \n");
 	}
+	
 	envlist_free(envlist); // we only need to free the environ list
 	(void) c;
 	(void) v;

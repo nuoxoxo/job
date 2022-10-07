@@ -13,6 +13,7 @@ lib_incl := -I $(lib_path)
 lib_name := $(lib_path)ft_toolkit.a
 
 # introduce readline
+
 rl		:=	-I/Users/$(USER)/.brew/opt/readline/include
 
 all		:	$(name)

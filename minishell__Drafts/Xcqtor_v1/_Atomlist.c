@@ -36,7 +36,7 @@ t_atom	*atomlist_new_node(char *s)
 
 	atom = (t_atom *) malloc(sizeof(t_atom));
 	if (!atom)
-		exit_error_alloc();
+		ft_exit_error_alloc();
 	atom->prev = null;
 	atom->next = null;
 	atom->type = T_OFF;
@@ -111,7 +111,7 @@ void	atomlist_from_envlist(t_atom *atom, t_env *envlist)
 		i = -1;
 		single_quote = 1;
 		s = ft_strdup_protected(atom->str);
-		while (++i < (int) slen(s))
+		while (++i < (int) ft_strlen(s))
 		{
 			quote_skip(s, & i, & single_quote);
 			/* Index tracking test */
@@ -145,7 +145,7 @@ char	*atomlist_getenv(t_env *envlist, char *atomstr, char *afterdollor)
 	char		*res;
 
 	key = envlist_get_key(afterdollor);
-	len = slen(key);
+	len = ft_strlen(key);
 	i = 0;
 	while (atomstr[i] && atomstr[i] != '$' && ++i)
 		;

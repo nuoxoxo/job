@@ -126,7 +126,7 @@ t_token		*tokenlist_from_envlist(t_env *elst) // init to an empty tokenlist
 
 	node = (t_token *) malloc(sizeof(t_token));
 	if (node == null)
-		exit_error_alloc();
+		ft_exit_error_alloc();
 	node->envlist = elst;
 	node->cmd = null;
 	node->prev = null;

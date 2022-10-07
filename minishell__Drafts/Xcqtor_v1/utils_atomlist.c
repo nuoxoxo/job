@@ -53,12 +53,12 @@ char	*quote_trim(char *s)
 	int		i;
 
 	len = quote_trim_len(s);
-	if (len == (int) slen(s))
+	if (len == (int) ft_strlen(s))
 		return (null);
 	i = 0;
 	res = (char *) malloc((len + 1) * sizeof(char));
 	if (!res)
-		exit_error_alloc();
+		ft_exit_error_alloc();
 	while (i < len)
 	{
 		if (*s != '\0')
