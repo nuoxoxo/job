@@ -6,22 +6,15 @@ void	XCQ(char *arg, char **env)
 	char		*path;
 
 	cmd = ft_split(arg, ' ');
-	path = path_finder(cmd[0], env); // lookup cmd(0) in environ list
+	path = path_finder(cmd[0], env);
 	if (path)
 	{
 		if (execve(path, cmd, env) == -1)
-			_error_exit_("Error on calling execve() \n");
+			_exit_error_("Error on calling execve() \n");
 		return ;
 	}
-	// basecase is error management . might be reached when !path
-	/*
-	while (cmd[++i])
-		free(cmd[i]);
-	free(cmd);
-	cmd = NULL;
-	*/
 	free_strlst(cmd);
-	_error_exit_("Error on path-finding \n");
+	_exit_error_("Error on path-finding \n");
 }
 
 //	TODO
@@ -49,8 +42,6 @@ char	*path_finder(char *cmd, char **env)
 	}
 	free_strlst(paths);
 	return (0);
-	// ... 
-	// TODO
 }
 
 void	free_strlst(char **vect)
@@ -69,18 +60,19 @@ void	free_strlst(char **vect)
 
 //
 
-void	_error_exit_(char *s)
+void	_exit_error_(char *s)
 {
 	if (s)
 		perror(s);
 	exit(EXIT_FAILURE);
 }
 
-void	usage(void)
+void	_exit_usage_(void)
 {
 	char		*s = "Usage: ./pipex file1 cmd1 cmd2 file2 \n";
 
 	write(1, s, len(s));
+	exit(EXIT_FAILURE);
 }
 
 int	len(char *s)
