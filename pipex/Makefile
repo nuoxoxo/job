@@ -16,11 +16,11 @@ $(name)		:	$(bud)
 
 
 clean		:
-			$(rmv) $(bud)
-			$(rmv) obj/
+			@ $(rmv) $(bud)
+			@ $(rmv) obj/
 
-fclean		:	clean
-			$(rmv) $(name)
+fclean		:	@ clean
+			@ $(rmv) $(name)
 
 all		:	$(name)
 f		:	fclean
