@@ -7,7 +7,6 @@
 # include "stdio.h"
 # include "sys/wait.h"
 # include "fcntl.h"
-# include "../libft/libft.h"
 
 void		parent_process(char **, char **, int[2]);
 void		child_process(char **, char **, int[2]);
