@@ -12,7 +12,7 @@ void		XCQ_Parent(char **, char **, int[2]);
 void		XCQ_Child(char **, char **, int[2]);
 void		XCQ(char *, char **);
 void		free_strlst(char **);
-void		error_exit(char *);
+void		_error_exit_(char *);
 void		usage(void);
 
 char		*path_finder(char *, char **);

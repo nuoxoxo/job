@@ -10,7 +10,7 @@ void	XCQ(char *arg, char **env)
 	if (path)
 	{
 		if (execve(path, cmd, env) == -1)
-			error_exit("Error on calling execve() \n");
+			_error_exit_("Error on calling execve() \n");
 		return ;
 	}
 	// basecase is error management . might be reached when !path
@@ -21,7 +21,7 @@ void	XCQ(char *arg, char **env)
 	cmd = NULL;
 	*/
 	free_strlst(cmd);
-	error_exit("Error on path-finding \n");
+	_error_exit_("Error on path-finding \n");
 }
 
 //	TODO
@@ -69,7 +69,7 @@ void	free_strlst(char **vect)
 
 //
 
-void	error_exit(char *s)
+void	_error_exit_(char *s)
 {
 	if (s)
 		perror(s);
