@@ -1,6 +1,6 @@
 #include "Pipex.h"
 
-void	exec_cmd(char *arg, char **env)
+void	XCQ(char *arg, char **env)
 {
 	char		**cmd;
 	char		*path;
@@ -20,7 +20,7 @@ void	exec_cmd(char *arg, char **env)
 	free(cmd);
 	cmd = NULL;
 	*/
-	free_argv(cmd);
+	free_strlst(cmd);
 	error_exit("Error on path-finding \n");
 }
 
@@ -47,13 +47,13 @@ char	*path_finder(char *cmd, char **env)
 			return (path);
 		free(path);
 	}
-	free_argv(paths);
+	free_strlst(paths);
 	return (0);
 	// ... 
 	// TODO
 }
 
-void	free_argv(char **vect)
+void	free_strlst(char **vect)
 {
 	int		i;
 

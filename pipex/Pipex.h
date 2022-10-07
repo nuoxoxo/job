@@ -8,15 +8,18 @@
 # include "sys/wait.h"
 # include "fcntl.h"
 
-void		parent_process(char **, char **, int[2]);
-void		child_process(char **, char **, int[2]);
-void		exec_cmd(char *, char **);
-void		free_argv(char **);
+void		XCQ_Parent(char **, char **, int[2]);
+void		XCQ_Child(char **, char **, int[2]);
+void		XCQ(char *, char **);
+void		free_strlst(char **);
 void		error_exit(char *);
 void		usage(void);
+
+char		*path_finder(char *, char **);
+
 int			read_input(char **);
 int			len(char *);
-char		*path_finder(char *, char **);
+
 char		**ft_split(char const *s, char c);
 char		*ft_strjoin(char const *prefix, char const *suffix);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t n);
