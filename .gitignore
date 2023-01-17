@@ -45,7 +45,6 @@ outfile
 replace
 fractol
 indexed
-showkey
 pthread
 *tester
 original
