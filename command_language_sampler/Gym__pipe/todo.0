@@ -1,0 +1,57 @@
+
+----------8<------ (° ʖ °) ----------------
+
+
+int pipe(int fds[2]);
+
+
+$ Parameters :
+
+	- a pipe has 2 ends
+	- fd[ 0 ]
+		file descriptor for the read end
+	- fd[ 1 ]
+		file descriptor for the write end
+	- * Pipes behave like "queues", ie. FIFO (First in First out)
+
+$ Return value :
+
+	- 0 on Success
+	- 1 on Error
+
+
+$ Perks
+	- Size of read and write don’t have to match
+		- We can write 512 bytes at a time
+		- and read only 1 byte at a time
+
+
+
+----------8<------ [ Gfg ] ----------------
+
+
+- Pipe is one-way and one-way only 
+	- one process write to the pipe
+	- the other process reads from the pipe
+
+- What happens is a pipe is opened
+	- an area of main memory that is treated as a “virtual file”.
+	- then the pipe is used both by the process that creates it
+	- and by all its child processes, for reading and writing
+	- one process can write to this “virtual file” or pipe and another related process can read from it.
+
+- What if a process tries to read before something is written to the pipe 
+	- the process is suspended until something is written
+
+- pipe needs a fd[2] from
+	- sic. "it finds the first two available positions
+		in the process’s open file table,
+		allocates them
+		for the read and write ends of the pipe."
+
+Simple as that. 
+
+
+
+----------8<------ [ end ] ----------------
+
