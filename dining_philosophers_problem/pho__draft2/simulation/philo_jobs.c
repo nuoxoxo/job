@@ -1,0 +1,150 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ...      :::::::    */
+/*   _                                                  ...      :::    :::   */
+/*                                                    ... ...         :::     */
+/*   By: nxu <marvin@42.fr>                         ...  ...       :::        */
+/*                                                ...........   :::           */
+/*   Created: ____/__/__ __:__:__ by nxu               ...    :::             */
+/*   Updated: ____/__/__ __:__:__ by nxu              ...   ::::::::.fi       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "philo.h"
+
+void	philo_eat(t_philo *p)
+{
+	int		idle;
+
+	philo_pick_up(p);
+	if (p->table->total_philo ^ 1)
+	{
+		philo_print_task(p, "starts eating");
+	}
+	p->last_meal = fetch_time();
+	if (p->table->total_philo == 1)
+	{
+		idle = p->table->time_to_die;
+		philo_spend_time(p, idle);
+	}
+	else
+	{
+		idle = p->table->time_to_eat;
+		philo_spend_time(p, idle);
+		p->eaten += 1;
+	}
+	philo_put_down(p);
+}
+
+void	philo_pick_up(t_philo *p)
+{
+	int		left;
+	int		right;
+
+	right = p->id % p->table->total_philo;
+	left = p->id - 1;
+	if (left % 2)
+	{
+		pthread_mutex_lock(& p->table->chops[left]);
+		philo_print_task(p, "picks up the left chopstick  \t\t  | Left");
+		pthread_mutex_lock(& p->table->chops[right]);
+		philo_print_task(p, "picks up the right chopstick  \t\t  |\t\tRight");
+	}
+	else
+	{
+		if (p->table->total_philo ^ 1)
+		{
+			pthread_mutex_lock(& p->table->chops[right]);
+			philo_print_task(p, "picks up the right chopstick  \t\t  |\t\tRight");
+		}
+		pthread_mutex_lock(& p->table->chops[left]);
+		philo_print_task(p, "picks up the left chopstick  \t\t  | Left");
+	}
+}
+
+/*
+ *
+ *	deadlock solution :
+ *
+ *		odd pho-eaters . start w/ the LEFT chopstick
+ *		even pho-eaters . start with the RIGHT one
+ *
+ * 	*problem w/ this solution :
+ *
+ * 		if K == odd :
+ * 			last pho-eater does not compete with anyone, 
+ * 			while others have to wait for longer time
+ *
+ * 				0 vs 1
+ * 				2 vs 3
+ * 				4 vs 5
+ * 				6 vs no one
+ *
+ * 		if K == even :
+ * 			each philo in every pair is in fair competition
+ *
+ * 				0 vs 1
+ * 				2 vs 3
+ * 				4 vs 5
+ * 				6 vs 7
+ *
+ *
+ */
+
+void	philo_put_down(t_philo *p)
+{
+	int		left;
+	int		right;
+
+	right = p->id % p->table->total_philo;
+	left = p->id - 1;
+	if (left % 2)
+	{
+		pthread_mutex_unlock(& p->table->chops[right]);
+		pthread_mutex_unlock(& p->table->chops[left]);
+	}
+	else
+	{
+		pthread_mutex_unlock(& p->table->chops[left]);
+		pthread_mutex_unlock(& p->table->chops[right]);
+	}
+}
+
+/*
+ *
+ *	deadlock solution . part 2 :
+ *
+ *		in put_down() :
+ *		
+ *		the reverse order of chopsticks will be put down, ie. unlocked
+ *
+ * 			if K == odd :
+ * 				unlock R
+ * 				unlock L
+ *
+ * 			if K == even :
+ * 				unlock L
+ * 				unlock R
+ *
+ *
+ */
+
+void	philo_sleep(t_philo *p)
+{
+	long long		idle;
+
+	if (p->table->total_philo ^ 1)
+		philo_print_task(p, "sleeps");
+	idle = p->table->time_to_sleep;
+	philo_spend_time(p, idle);
+}
+
+void	philo_think(t_philo *p)
+{
+	long long		idle;
+
+	if (p->table->total_philo ^ 1)
+		philo_print_task(p, "thinks");
+	idle = p->table->time_to_eat - p->table->time_to_sleep;
+	philo_spend_time(p, idle);
+}

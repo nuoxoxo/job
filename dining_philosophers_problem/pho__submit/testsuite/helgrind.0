@@ -1,0 +1,46 @@
+|====== 1 ======|
+
+valgrind --tool=helgrind ./philo 1 800 200 200 0
+    no ops
+
+valgrind --tool=helgrind ./philo 1 800 200 200
+    no eating, die at once
+
+|====== 2 ======|
+
+valgrind --tool=helgrind ./philo 2 800 200 200
+    no one dies
+
+|====== 4 ======|
+
+valgrind --tool=helgrind ./philo 4 500 200 2147483647
+    someone dies at 500 ms
+
+valgrind --tool=helgrind ./philo 4 200 210 200
+    someone dies before 210 ms
+
+valgrind --tool=helgrind ./philo 4 310 200 100
+    someone dies
+
+valgrind --tool=helgrind ./philo 4 410 200 200
+    no one dies
+
+valgrind --tool=helgrind ./philo 4 2147483647 200 200
+    no one dies
+
+|====== 5 ======|
+
+valgrind --tool=helgrind ./philo 5 800 200 200 7
+    game goes on until meals=7
+
+valgrind --tool=helgrind ./philo 5 800 200 200 1 
+    should show alt. picking up
+
+./philo 23 800 200 200 1 > out | grep eating | wc -l
+    should show alt. view and get 23 
+
+valgrind --tool=helgrind ./philo 5 600 150 150 
+    someone dies on ubu, no one dies on osx
+
+valgrind --tool=helgrind ./philo 5 800 200 200
+    no one dies
