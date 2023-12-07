@@ -1,0 +1,29 @@
+- ## Aoc 2021 🌲
+  - --- Day 1: Sonar Sweep --- ⭐️⭐️
+  - --- Day 2: Dive! --- ⭐️⭐️
+  - --- Day 3: Binary Diagnostic --- ⭐️⭐️
+  - --- Day 4: Giant Squid (Bingo)--- ⭐️⭐️
+  - --- Day 5: Hydrothermal Venture --- ⭐️⭐️
+  - --- Day 6: Lanternfish --- ⭐️⭐️
+  - --- Day 7: The Treachery of Whales (Crab) --- ⭐️⭐️
+  - --- Day 8: Seven Segment Search (SSD) --- ⭐️⭐️\
+---------- 1/3 ----------
+  - --- Day 9: Smoke Basin --- ⭐️⭐️
+  - --- Day 10: Syntax Scoring --- ⭐️⭐️
+  - --- Day 11: Dumbo Octopus --- ⭐️⭐️
+  - --- Day 12: Passage Pathing --- ⭐️⭐️\
+---------- 1/2 ----------
+  - --- Day 13: Transparent Origami --- ⭐️⭐️
+  - --- Day 14: Extended Polymerization --- ⭐️⭐️
+  - --- Day 15: Chiton --- ⭐️⭐️
+  - --- Day 16: Packet Decoder --- ◯ ◯\
+---------- 2/3 ----------
+  - --- Day 17: Trick Shot --- ⭐️⭐️
+  - --- Day 18: Snailfish --- ◯ ◯
+  - --- Day 19: Beacon Scanner --- ◯ ◯
+  - --- Day 20: Trench Map --- ⭐️⭐️
+  - --- Day 21: Dirac Dice --- ⭐️◯
+  - --- Day 22: Reactor Reboot --- ⭐️◯
+  - --- Day 23: Amphipod --- ⭐️◯ (solved by hand)
+  - --- Day 24: Arithmetic Logic Unit ---
+  - --- Day 25: Sea Cucumber --- ⭐️_
